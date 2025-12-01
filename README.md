@@ -7,7 +7,6 @@ Niri setup for my old laptop with dynamic themes and shit.
   <img src="Pictures/preview.png" width="600">
 </div><br>
 
-
 ## 🛠️ Stuff I use 
 
 - **niri** 
