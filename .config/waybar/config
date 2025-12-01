@@ -1,0 +1,89 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 0,
+
+    "modules-left": [
+        "niri/workspaces",
+	"custom/separator",
+	"custom/mpc"
+    ],
+
+    "modules-center": [
+	"custom/power"
+],
+
+    "modules-right": [
+    	"custom/separator",
+        "backlight",
+        "custom/separator",
+        "pulseaudio",
+        "custom/separator",
+        "clock",
+        "custom/separator"
+    ],
+
+    "niri/workspaces": {
+        "format": "{index}"
+    },
+
+    "backlight": {
+        "format": "BRI {percent}%",
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-muted": "VOL {volume}%",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "clock": {
+        "format": "{:%a %d %b %Y %H:%M}",
+        "format-alt": "{:%a %d %b %Y}",
+        "tooltip": false,
+        "on-click": "toggle"
+    },
+
+    "custom/separator": {
+        "format": "|",
+        "tooltip": false
+    },
+    
+    "custom/msg": {
+    "format": " desu",
+    "tooltip": false
+    },
+
+    "custom/greeting": {
+    "exec": "shuf -n 1 ~/.config/waybar/desu.txt",
+    "interval": 300,
+    "format": "{}"
+    },
+
+    "custom/music": {
+      "format": "{}",
+      "return-type": "json",
+      "exec": "waybar-module-music",
+    },
+
+   "custom/mpc": {
+        "exec": "~/.config/waybar/scripts/mpc-modules.py",
+        "interval": 1,
+        "return-type": "json",
+        "on-click": "mpc toggle"
+    },
+
+   "custom/power": {
+       "exec": "~/.config/waybar/scripts/power-profile.sh",
+       "return-type": "json",
+       "interval": 2,
+       "on-click": "~/.config/waybar/scripts/power-profile.sh cycle",
+       "format": "{}"
+   }
+}
