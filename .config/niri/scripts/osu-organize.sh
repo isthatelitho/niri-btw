@@ -21,12 +21,12 @@ if [[ $skin_count != '0' ]]; then
   for file in $downloaddir/*.osk; do
     filename=$(basename -- "$file")
     base="${filename%.*}"
-    mkdir $downloaddir/"$base"
-    mv $downloaddir/"$filename" $downloaddir/"$base"
-    cd $downloaddir/"$base"
-    7z x "$filename" > /dev/null 2>&1
-    rm "$filename"
-    cd $downloaddir
-    mv "$base" $skindir
+    mkdir "$downloaddir/$base"
+    mv "$downloaddir/$filename" "$downloaddir/$base"
+    cd "$downloaddir/$base"
+    7z x "./$filename" > /dev/null 2>&1
+    rm -- "$filename"
+    cd "$downloaddir"
+    mv -- "$base" "$skindir"
   done
 fi

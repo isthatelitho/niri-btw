@@ -72,11 +72,15 @@
       "exec": "waybar-module-music",
     },
 
-   "custom/mpc": {
+    "custom/mpc": {
         "exec": "~/.config/waybar/scripts/mpc-modules.py",
-        "interval": 1,
+        "interval": 400,
         "return-type": "json",
-        "on-click": "mpc toggle"
+        "on-click": "mpc toggle",
+        "on-click-right": "mpc next",
+	"on-click-middle": "mpc prev",
+        "on-scroll-up": "mpc volume +5",
+        "on-scroll-down": "mpc volume -5"
     },
 
    "custom/power": {
