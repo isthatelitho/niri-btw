@@ -1,8 +1,9 @@
+
 <br><div align="center">
   <img src="Pictures/preview.png" width="600">
 </div><br>
 
-<!-- <h1 align="center">Niri Btw ✨ </h1> --!>
+<!-- <h1 align="center">Niri Btw ✨ </h1> -->
 
 <div align="center">
 Niri setup for my old laptop with dynamic themes and shit.
