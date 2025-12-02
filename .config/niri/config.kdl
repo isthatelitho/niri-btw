@@ -311,6 +311,7 @@ binds {
     Mod+Shift+Z     { spawn "sh" "-c" "~/.config/niri/scripts/toggle-rotation.sh"; }
     Mod+X           { spawn-sh "killall waybar && waybar &"; }
     Mod+E           { spawn-sh "nautilus"; }
+    Mod+Alt+L       { spawn "swaylock"; }
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     //Mod+T hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
     //Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }

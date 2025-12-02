@@ -4,9 +4,9 @@ import json
 
 def get_song():
     try:
-        output = subprocess.run(['mpc', 'current'], 
-                              capture_output=True, 
-                              text=True, 
+        output = subprocess.run(['mpc', '-h', '/tmp/mpd_socket', 'current'],
+                              capture_output=True,
+                              text=True,
                               timeout=2)
         song = output.stdout.strip()
         return song if song else "in this economy?"

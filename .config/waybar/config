@@ -74,7 +74,7 @@
 
     "custom/mpc": {
         "exec": "~/.config/waybar/scripts/mpc-modules.py",
-        "interval": 400,
+        "interval": 1,
         "return-type": "json",
         "on-click": "mpc toggle",
         "on-click-right": "mpc next",
