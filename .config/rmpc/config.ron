@@ -2,10 +2,10 @@
 #![enable(unwrap_newtypes)]
 #![enable(unwrap_variant_newtypes)]
 (
-    address: "/tmp/mpd_socket",
+    address: "127.0.0.1:6600",
     password: None,
-    theme: Some("/home/eli/.config/rmpc/theme.ron"),
-    cache_dir: Some("/tmp/rmpc/cache"),
+    theme: Some("/home/eli/.config/rmpc/themes/theme.ron"),
+    cache_dir: None,
     on_song_change: None,
     volume_step: 5,
     max_fps: 30,
