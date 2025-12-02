@@ -8,6 +8,7 @@
 Niri setup for my old laptop with dynamic themes and shit.
 </div>
 
+
 ## 🛠️ Stuff I use 
 
 - **niri** 
