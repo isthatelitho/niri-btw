@@ -7,9 +7,14 @@ if [ -z "$wallpaper" ]; then
     exit 1
 fi
 
-pkill swaybg
+# Check if swww daemon is running, start if not
+if ! pgrep -x swww-daemon > /dev/null; then
+    swww init &
+    sleep 1
+fi
 
-swaybg -i "$wallpaper" -m fill &
+# Set wallpaper with fade transition
+swww img "$wallpaper" --transition-type random --transition-duration 2 --transition-fps 60
 
 wal -i "$wallpaper"
 

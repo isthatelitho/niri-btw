@@ -1,13 +1,14 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 32,
+    "height": 33,
     "spacing": 0,
 
     "modules-left": [
         "niri/workspaces",
 	"custom/separator",
-	"custom/mpc"
+	"custom/mpc",
+	"custom/separator"
     ],
 
     "modules-center": [

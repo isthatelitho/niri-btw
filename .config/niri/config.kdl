@@ -85,7 +85,7 @@ output "eDP-1" {
     mode "1920x1080"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1
+    scale 1.1
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -201,7 +201,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-
+spawn-at-startup "swww-daemon"
 spawn-at-startup "/home/eli/.config/niri/random-wall.sh"
 //swaybg -i $(find /home/eli/Pictures/walls/. -type f | shuf -n1) -m fill &
 

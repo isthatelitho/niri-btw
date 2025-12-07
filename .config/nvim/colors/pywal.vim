@@ -3,24 +3,24 @@ hi clear
 syntax reset
 let g:colors_name = "wal"
 
-hi Normal guifg=#e5e4e4 guibg=#0d0d0d
-hi Comment guifg=#a09f9f
-hi Constant guifg=#AEC3BD
-hi String guifg=#DCA1A2
-hi Identifier guifg=#F5D2B1
-hi Function guifg=#F5D2B1
-hi Statement guifg=#A2A6A5
-hi PreProc guifg=#B1BAC5
-hi Type guifg=#B0CBC8
-hi Special guifg=#AEC3BD
-hi Underlined guifg=#F5D2B1
-hi Error guifg=#A2A6A5 guibg=#0d0d0d
-hi Todo guifg=#B1BAC5 guibg=#0d0d0d
-hi LineNr guifg=#a09f9f
-hi CursorLineNr guifg=#AEC3BD
-hi Visual guibg=#a09f9f
-hi StatusLine guifg=#e5e4e4 guibg=#0d0d0d
-hi StatusLineNC guifg=#a09f9f guibg=#0d0d0d
-hi VertSplit guifg=#0d0d0d guibg=#0d0d0d
-hi Pmenu guifg=#e5e4e4 guibg=#0d0d0d
-hi PmenuSel guifg=#0d0d0d guibg=#F5D2B1
+hi Normal guifg=#c4c7ca guibg=#1c1f1b
+hi Comment guifg=#898b8d
+hi Constant guifg=#547A8F
+hi String guifg=#1E7294
+hi Identifier guifg=#2E89A1
+hi Function guifg=#2E89A1
+hi Statement guifg=#808675
+hi PreProc guifg=#61929E
+hi Type guifg=#4EA8D1
+hi Special guifg=#547A8F
+hi Underlined guifg=#2E89A1
+hi Error guifg=#808675 guibg=#1c1f1b
+hi Todo guifg=#61929E guibg=#1c1f1b
+hi LineNr guifg=#898b8d
+hi CursorLineNr guifg=#547A8F
+hi Visual guibg=#898b8d
+hi StatusLine guifg=#c4c7ca guibg=#1c1f1b
+hi StatusLineNC guifg=#898b8d guibg=#1c1f1b
+hi VertSplit guifg=#1c1f1b guibg=#1c1f1b
+hi Pmenu guifg=#c4c7ca guibg=#1c1f1b
+hi PmenuSel guifg=#1c1f1b guibg=#2E89A1

@@ -3,6 +3,7 @@
 * {
     font-family: "uzura_font", monospace;
     font-size: 20px;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 window#waybar {
