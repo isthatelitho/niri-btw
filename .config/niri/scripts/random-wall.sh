@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wallpaper=$(find /home/eli/Pictures/walls/ -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | shuf -n1)
+wallpaper=$(find /home/eli/Pictures/walls/ -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.gif" \) | shuf -n1)
 
 if [ -z "$wallpaper" ]; then
     echo "No wallpapers found in /home/eli/Pictures/walls/"

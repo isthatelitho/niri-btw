@@ -108,7 +108,7 @@ output "eDP-1" {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 4
+    gaps 5
 
     background-color "transparent"
 
@@ -165,7 +165,7 @@ layout {
         width 2
 
         // Color of the border around windows that request your attention.
-        active-color "#e5989b"
+        active-color "#4a5353"
 	inactive-color "#4a5353"
 	urgent-color "#4a5353"
     }
@@ -173,7 +173,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        off
+        on
         softness 5
 
         // Spread expands the shadow.
@@ -203,12 +203,16 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "/home/eli/.config/niri/random-wall.sh"
+spawn-at-startup "
+//swaybg -i $(find /home/eli/Pictures/walls/. -type f | shuf -n1) -m fill &
 
+//spawn-sh-at-startup "swaybg -m fill -i Pictures/walls/1313928.jpg"
+//spawn-at-startup "swaybg" "-i" "$(find ~/Pictures/walls -type f | shuf -n 1)"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 spawn-sh-at-startup "brightnessctl set 100%"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-//spawn-sh-at-startup "/home/eli/.config/niri/scripts/random-wall.sh"
+spawn-sh-at-startup "/home/eli/.config/niri/scripts/random-wall.sh"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -301,7 +305,7 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
     MOD+RETURN      { spawn-sh "kitty"; }
-    MOD+SPACE       { spawn-sh "rofi -show drun -pid /tmp/rofi.pid"; }
+    MOD+SPACE       { spawn-sh "rofi -show drun"; }
     MOD+B           { spawn-sh "firefox"; }
     Mod+Z           { spawn-sh "/home/eli/.config/niri/scripts/toggle-waybar.sh"; }
     Mod+N           { spawn-sh "/home/eli/.config/niri/scripts/random-wall.sh"; }
