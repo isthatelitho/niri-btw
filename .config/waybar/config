@@ -12,8 +12,11 @@
     ],
 
     "modules-center": [
-	"custom/power"
-],
+	"custom/separator",
+	"custom/power",
+	"custom/separator",
+	"custom/recorder"
+    ],
 
     "modules-right": [
     	"custom/separator",
@@ -45,8 +48,8 @@
     },
 
     "clock": {
-        "format": "{:%a %d %b %Y %H:%M}",
-        "format-alt": "{:%a %d %b %Y}",
+        "format-alt": "{:%a %d %b %Y %H:%M}",
+        "format": "{:%a %d %b %Y}",
         "tooltip": false,
         "on-click": "toggle"
     },
@@ -89,6 +92,14 @@
        "return-type": "json",
        "interval": 2,
        "on-click": "~/.config/waybar/scripts/power-profile.sh cycle",
+       "format": "{}"
+    },
+
+   "custom/recorder": {
+       "exec": "~/.config/waybar/scripts/recording-indicator.sh",
+       "return-type": "json",
+       "interval": 1,
+       "signal": 8,
        "format": "{}"
    }
 }

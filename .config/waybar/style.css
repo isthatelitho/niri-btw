@@ -67,3 +67,18 @@ window#waybar {
 	background-color: @background;
 	color: @color2;
 }
+
+#custom-recorder.recording {
+    color: #ff6b6b;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+#custom-recorder.not-recording {
+    color: transparent;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}

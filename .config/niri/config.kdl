@@ -204,6 +204,7 @@ spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "/home/eli/.config/niri/random-wall.sh"
 
+
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 spawn-sh-at-startup "brightnessctl set 100%"
@@ -309,6 +310,9 @@ binds {
     Mod+X           { spawn-sh "killall waybar && waybar &"; }
     Mod+E           { spawn-sh "nautilus"; }
     Mod+Alt+L       { spawn "swaylock"; }
+    Mod+Shift+Print { spawn-sh "/home/eli/.config/niri/scripts/screen-record.sh"; }
+    Mod+Shift+N     { spawn-sh "/home/eli/.config/niri/scripts/wallpaper-selector.sh"; }
+
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     //Mod+T hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
     //Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }

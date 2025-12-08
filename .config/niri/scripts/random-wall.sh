@@ -14,7 +14,7 @@ if ! pgrep -x swww-daemon > /dev/null; then
 fi
 
 # Set wallpaper with fade transition
-swww img "$wallpaper" --transition-type random --transition-duration 2 --transition-fps 60
+swww img "$wallpaper" --transition-type center --transition-duration 2 --transition-fps 60
 
 wal -i "$wallpaper"
 
