@@ -16,7 +16,7 @@ fi
 # Set wallpaper with fade transition
 swww img "$wallpaper" --transition-type center --transition-duration 2 --transition-fps 60
 
-wal -i "$wallpaper"
+wal -n -i "$wallpaper"
 
 ln -sf "$wallpaper" ~/.cache/wal/current_wallpaper.png
 

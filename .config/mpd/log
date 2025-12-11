@@ -1,0 +1,32 @@
+2025-12-09T12:14:05 exception: Failed to open "/home/eli/.config/mpd/state": No such file or directory
+2025-12-09T12:14:41 exception: Failed to open /home/eli/.config/mpd/playlists: No such file or directory
+2025-12-09T18:21:23 exception: Failed to open /home/eli/.config/mpd/playlists: No such file or directory
+2025-12-09T18:22:14 update: added Atarashii Gakko/ATARASHII GAKKO! - Giri Giri.mp3
+2025-12-09T18:22:14 update: added Atarashii Gakko/ATARASHII GAKKO! - Suki Lie.mp3
+2025-12-09T18:22:14 update: added Atarashii Gakko/ATARASHII GAKKO! - オトナブルー - OTONABLUE.mp3
+2025-12-09T18:22:14 update: added Atarashii Gakko/ATARASHII GAKKO! - じゃないんだよ - JANAINDAYO.mp3
+2025-12-09T18:22:14 update: added Atarashii Gakko/ATARASHII GAKKO! - 乙女の美学 - OTOME NO BIGAKU.mp3
+2025-12-09T18:22:14 update: added Atarashii Gakko/ATARASHII GAKKO! - 踊る本能001 - ODORU HONNO 001.mp3
+2025-12-09T18:22:14 update: added Atarashii Gakko/ATARASHII GAKKO! - 青春を切り裂く波動 - SEISHUN WO KIRISAKU HADO.mp3
+2025-12-09T18:22:14 exception: Failed to open /home/eli/.config/mpd/playlists: No such file or directory
+2025-12-09T18:22:14 exception: Failed to open /home/eli/.config/mpd/playlists: No such file or directory
+2025-12-09T18:22:17 exception: Failed to open /home/eli/.config/mpd/playlists: No such file or directory
+2025-12-09T18:22:27 player: played "Atarashii Gakko/ATARASHII GAKKO! - じゃないんだよ - JANAINDAYO.mp3"
+2025-12-09T18:22:28 player: played "Atarashii Gakko/ATARASHII GAKKO! - オトナブルー - OTONABLUE.mp3"
+2025-12-09T18:36:01 player: played "Atarashii Gakko/ATARASHII GAKKO! - 乙女の美学 - OTOME NO BIGAKU.mp3"
+2025-12-09T18:39:18 player: played "Atarashii Gakko/ATARASHII GAKKO! - 踊る本能001 - ODORU HONNO 001.mp3"
+2025-12-09T18:54:22 exception: Failed to open /home/eli/.config/mpd/playlists: No such file or directory
+2025-12-09T18:54:26 exception: Failed to open /home/eli/.config/mpd/playlists: No such file or directory
+2025-12-09T18:54:39 update: added Buck Tick/Buck-Tick - 蜉蝣‐かげろう‐ - Kagerou.mp3
+2025-12-09T18:54:42 exception: Failed to open /home/eli/.config/mpd/playlists: No such file or directory
+2025-12-09T18:54:43 player: played "Atarashii Gakko/ATARASHII GAKKO! - 乙女の美学 - OTOME NO BIGAKU.mp3"
+2025-12-10T15:35:36 update: added Atarashii Gakko/ATARASHII GAKKO! - Giri Giri.mp3
+2025-12-10T15:35:36 update: added Atarashii Gakko/ATARASHII GAKKO! - Suki Lie.mp3
+2025-12-10T15:35:36 update: added Atarashii Gakko/ATARASHII GAKKO! - オトナブルー - OTONABLUE.mp3
+2025-12-10T15:35:36 update: added Atarashii Gakko/ATARASHII GAKKO! - じゃないんだよ - JANAINDAYO.mp3
+2025-12-10T15:35:36 update: added Atarashii Gakko/ATARASHII GAKKO! - 乙女の美学 - OTOME NO BIGAKU.mp3
+2025-12-10T15:35:36 update: added Atarashii Gakko/ATARASHII GAKKO! - 踊る本能001 - ODORU HONNO 001.mp3
+2025-12-10T15:35:36 update: added Atarashii Gakko/ATARASHII GAKKO! - 青春を切り裂く波動 - SEISHUN WO KIRISAKU HADO.mp3
+2025-12-10T15:35:36 update: added Buck Tick/Buck-Tick - 蜉蝣‐かげろう‐ - Kagerou.mp3
+2025-12-10T15:35:44 exception: Failed to open /home/eli/.config/mpd/playlists: No such file or directory
+2025-12-10T15:39:47 pipewire_output: Decoder is too slow; playing silence to avoid xrun

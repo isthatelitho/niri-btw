@@ -1,0 +1,22 @@
+sw_volume: 100
+audio_device_state:1:PipeWire Sound Server
+state: pause
+current: 4
+time: 148.80100000000002
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0
+mixrampdelay: -1
+lastloadedplaylist: 
+playlist_begin
+0:Atarashii Gakko/ATARASHII GAKKO! - Giri Giri.mp3
+1:Atarashii Gakko/ATARASHII GAKKO! - Suki Lie.mp3
+2:Atarashii Gakko/ATARASHII GAKKO! - じゃないんだよ - JANAINDAYO.mp3
+3:Atarashii Gakko/ATARASHII GAKKO! - オトナブルー - OTONABLUE.mp3
+4:Atarashii Gakko/ATARASHII GAKKO! - 乙女の美学 - OTOME NO BIGAKU.mp3
+5:Atarashii Gakko/ATARASHII GAKKO! - 踊る本能001 - ODORU HONNO 001.mp3
+6:Atarashii Gakko/ATARASHII GAKKO! - 青春を切り裂く波動 - SEISHUN WO KIRISAKU HADO.mp3
+playlist_end

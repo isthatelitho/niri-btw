@@ -1,9 +1,9 @@
 [color]
 gradient = 1
 gradient_count = 6
-gradient_color_1 = '#E1967D'
-gradient_color_2 = '#E8A26A'
-gradient_color_3 = '#B09D90'
-gradient_color_4 = '#E29A82'
-gradient_color_5 = '#DEA68B'
-gradient_color_6 = '#EFCFA9'
+gradient_color_1 = '#486C7C'
+gradient_color_2 = '#967763'
+gradient_color_3 = '#3E6E82'
+gradient_color_4 = '#567683'
+gradient_color_5 = '#72878E'
+gradient_color_6 = '#B3B4AA'

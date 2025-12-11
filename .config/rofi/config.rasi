@@ -23,54 +23,49 @@ configuration {
 
 window {
     location: center;
-    width: 1500;
+    width: 700;
     border-radius: 0px;
     background-color: @background;
 }
 
 mainbox {
     padding: 0px;
-    background-color: @background;
-    border-radius: 2px;
-    orientation: horizontal;
-    children: [ wallpaper-box, content-box ];
-}
-
-wallpaper-box {
-    width: 300px;
-    background-image: url("~/.cache/wal/current_wallpaper.png", height);
-    background-color: @background;
-}
-
-content-box {
-    padding: 4px;
-    background-color: @background;
-    children: [ inputbar, message, listview ];
+    background-color: transparent;
+    orientation: vertical;
+    children: [ inputbar, content-box ];
 }
 
 inputbar {
-    background-color: @normal-background;
+    background-image: url("~/.cache/wal/current_wallpaper.png", width);
+    background-color: transparent;
     border-radius: 0px;
-    padding: 14px 16px;
+    padding: 180px 60px 40px 60px;
     spacing: 8px;
     children: [ prompt, entry ];
-    margin: 0px 0px 12px 0px;
 }
 
 prompt {
     text-color: @foreground;
-    background-color: transparent;
+    background-color: @normal-background;
+    padding: 14px 16px;
 }
 
 entry {
     placeholder: "Search...";
     placeholder-color: @urgent-background;
     text-color: @foreground;
-    background-color: transparent;
+    background-color: @normal-background;
+    padding: 14px 16px;
+}
+
+content-box {
+    padding: 12px;
+    background-color: @background;
+    children: [ message, listview ];
 }
 
 message {
-    margin: 12px 0px 0px;
+    margin: 0px 0px 12px 0px;
     border-radius: 0px;
     background-color: @normal-background;
 }

@@ -26,14 +26,14 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: @color4;
+    background-color: @color5;
     color: @foreground;
     font-weight: bold;
     border-radius: 0;
 }
 
 #workspaces button:hover {
-    background: @color4;
+    background: @color5;
     color: @foreground;
     border-radius: 0;
 }

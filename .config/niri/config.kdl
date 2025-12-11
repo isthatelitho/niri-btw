@@ -203,7 +203,9 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "/home/eli/.config/niri/random-wall.sh"
-
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+spawn-at-startup "niri-float-sticky"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -312,6 +314,7 @@ binds {
     Mod+Alt+L       { spawn "swaylock"; }
     Mod+Shift+Print { spawn-sh "/home/eli/.config/niri/scripts/screen-record.sh"; }
     Mod+Shift+N     { spawn-sh "/home/eli/.config/niri/scripts/wallpaper-selector.sh"; }
+    Mod+Shift+V { spawn "sh" "-c" "cliphist list | rofi -dmenu -config ~/.config/rofi/clipboard.rasi | cliphist decode | wl-copy"; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     //Mod+T hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
@@ -529,7 +532,7 @@ binds {
 
     // Move the focused window between the floating and the tiling layout.
     Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    // Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,

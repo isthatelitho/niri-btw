@@ -2,9 +2,9 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 
 #  overwrite greeting
 # potentially disabling fastfetch
-#function fish_greeting
+function fish_greeting
 #    # smth smth
-#end
+end
 
 alias ffa='anifetch Downloads/nisioisin-anime.mp4 -ff -r 10 -W 40 -H 20 -c "--symbols wide --fg-only"; printf '\033c'; stty sane'
 alias ytp='pipe-viewer'
@@ -15,3 +15,4 @@ alias rm="rm -i"
 alias up="cd .." 
 alias osu-import='~/.config/niri/scripts/osu-organize.sh'
 alias gpush='git push origin main'
+alias ff='clear && fastfetch'
