@@ -1,0 +1,76 @@
+# Zathura configuration file
+
+# ============================================================================
+# Display Settings
+# ============================================================================
+
+set adjust-open "best-fit"
+set pages-per-row 1
+set guioptions ""
+set render-loading "false"
+
+# ============================================================================
+# Scrolling
+# ============================================================================
+
+set scroll-page-aware "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+# ============================================================================
+# Zoom Settings
+# ============================================================================
+
+set zoom-min 10
+
+# ============================================================================
+# Color Scheme (Pywal Generated)
+# ============================================================================
+
+# Default colors
+set default-bg "{background}"
+set default-fg "{color5}"
+
+# Status bar
+set statusbar-fg "{foreground}"
+set statusbar-bg "{background}"
+
+# Input bar
+set inputbar-bg "{background}"
+set inputbar-fg "{foreground}"
+
+# Notifications
+set notification-error-bg "{color1}"
+set notification-error-fg "{background}"
+set notification-warning-bg "{color3}"
+set notification-warning-fg "{background}"
+set notification-bg "{color2}"
+set notification-fg "{background}"
+
+# Highlighting
+set highlight-color "{color3}"
+set highlight-active-color "{color4}"
+
+# Completion menu
+set completion-highlight-fg "{background}"
+set completion-highlight-bg "{color4}"
+set completion-bg "{color0}"
+set completion-fg "{foreground}"
+
+# ============================================================================
+# Recolor (Dark Mode for Documents)
+# ============================================================================
+
+set recolor "true"
+set recolor-lightcolor "{background}"
+set recolor-darkcolor "{color5}"
+set recolor-reverse-video "true"
+set recolor-keephue "true"
+
+# ============================================================================
+# Keybindings
+# ============================================================================
+
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
