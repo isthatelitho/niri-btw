@@ -1,201 +1,214 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Configuration
+# configuration
 WALLPAPER_DIR="$HOME/Pictures/walls"
 CACHE_DIR="$HOME/.cache/rofi-wallpaper"
 THUMB_DIR="$CACHE_DIR/thumbs"
+BLUR_DIR="$CACHE_DIR/blurred"
 SYMLINK="$CACHE_DIR/current_wallpaper"
 THUMBNAIL_SIZE="400x900"
 ROFI_THEME="$HOME/.config/rofi/wallpaper.rasi"
 
-# Performance settings
+# jobs BRO JOBS
 MAX_PARALLEL_JOBS=4
+THUMB_QUALITY=85  # JPEG quality for thumbnails
 
-# SWWW transition settings
-TRANSITION_TYPE="any"  # Options: simple, fade, wipe, grow, outer, wave, center, any, random
+# cause im lazy
+TRANSITION_TYPE="any"
 TRANSITION_DURATION=2
 TRANSITION_FPS=60
 TRANSITION_ANGLE=45
 TRANSITION_POS="center"
 
-mkdir -p "$THUMB_DIR"
+# i love blur
+BLUR_RADIUS="0x10"
 
-# Generate hash-based thumbnail name
+mkdir -p "$THUMB_DIR" "$BLUR_DIR"
+
+# dunno whaat this do
 thumb_name() {
-    local img="$1"
-    local hash=$(printf "%s" "$img" | md5sum | cut -d' ' -f1)
-    echo "$THUMB_DIR/${hash}.png"
+    printf "%s" "$1" | md5sum | awk '{print "'$THUMB_DIR'/"$1".jpg"}'
 }
 
-# Create thumbnail with video support
-make_thumb() {
-    local img="$1"
-    local thumb="$2"
-    local base=$(basename "$img")
-    local name="${base%.*}"
+# or this
+blur_name() {
+    printf "%s" "$1" | md5sum | awk '{print "'$BLUR_DIR'/"$1".jpg"}'
+}
 
-    if file --mime-type -b "$img" | grep -q '^video/'; then
-        local tmp="/tmp/${name}.png"
-        ffmpeg -y -i "$img" -frames:v 1 -q:v 2 "$tmp" &>/dev/null
-        magick "$tmp" -strip -resize "$THUMBNAIL_SIZE^" -gravity center -extent "$THUMBNAIL_SIZE" "$thumb"
-        rm -f "$tmp"
+# video? why even
+make_thumb() {
+    local img="$1" thumb="$2"
+    
+    if file -b --mime-type "$img" | grep -q '^video/'; then
+        ffmpeg -loglevel error -i "$img" -vframes 1 -vf "scale=${THUMBNAIL_SIZE}:force_original_aspect_ratio=increase,crop=${THUMBNAIL_SIZE}" -q:v 2 "$thumb" 2>/dev/null
     else
-        magick "$img"[0] -strip -resize "$THUMBNAIL_SIZE^" -gravity center -extent "$THUMBNAIL_SIZE" "$thumb"
+        magick "$img"[0] -strip -quality "$THUMB_QUALITY" -resize "$THUMBNAIL_SIZE^" -gravity center -extent "$THUMBNAIL_SIZE" "$thumb" 2>/dev/null
     fi
 }
 
-# Clean up orphaned thumbnails
-cleanup_orphaned_thumbnails() {
-    local -A valid_thumbnails
+# yeah whatever
+make_blurred() {
+    local img="$1" blurred="$2"
     
-    # Build map of valid thumbnail hashes
-    while IFS= read -r -d '' image; do
-        local thumb_hash=$(printf "%s" "$image" | md5sum | cut -d' ' -f1)
-        valid_thumbnails["${thumb_hash}.png"]=1
-    done < <(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.gif" -o -iname "*.webm" \) -print0)
-    
-    # Remove orphaned thumbnails
-    while IFS= read -r -d '' thumbnail; do
-        local thumb_name=$(basename "$thumbnail")
-        [[ -z "${valid_thumbnails[$thumb_name]}" ]] && rm -f "$thumbnail"
-    done < <(find "$THUMB_DIR" -type f -name "*.png" -print0)
+    if file -b --mime-type "$img" | grep -q '^video/'; then
+        ffmpeg -loglevel error -i "$img" -vframes 1 -vf "scale=1920:-1,boxblur=10:2" -q:v 3 "$blurred" 2>/dev/null
+    else
+        magick "$img"[0] -scale 25% -blur "$BLUR_RADIUS" -resize 1920x1080\! -quality 80 "$blurred" 2>/dev/null
+    fi
 }
 
-# Set wallpaper with transitions and theme updates
+# blur blur this
+cleanup_orphaned_thumbnails() {
+    local tmp_valid="/tmp/valid_hashes_$$.txt"
+    
+    # hash abash bash bash bash b
+    find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.gif" -o -iname "*.webm" \) -print0 | \
+        xargs -0 -I {} sh -c 'printf "%s" "{}" | md5sum' | awk '{print $1".jpg"}' > "$tmp_valid"
+    
+    # remove the garbage
+    comm -23 <(ls -1 "$THUMB_DIR" | sort) <(sort "$tmp_valid") | xargs -I {} rm -f "$THUMB_DIR/{}" 2>/dev/null
+    comm -23 <(ls -1 "$BLUR_DIR" | sort) <(sort "$tmp_valid") | xargs -I {} rm -f "$BLUR_DIR/{}" 2>/dev/null
+    
+    rm -f "$tmp_valid"
+}
+
+# biggest thing 
 set_wallpaper() {
     local wallpaper="$1"
     
-    # Start swww-daemon if not running
-    if ! pgrep -x swww-daemon >/dev/null; then
-        swww-daemon --fork 2>/dev/null || swww init &
-        sleep 1
-    fi
+    # incase i forg
+    pgrep -x swww-daemon >/dev/null || { swww-daemon --fork 2>/dev/null || swww init & sleep 0.5; }
+    
+    # yeah true
+    pgrep -f "swww-daemon.*--namespace overview" >/dev/null || { swww-daemon --namespace overview & sleep 0.5; }
 
-    # Choose random transition if set to "any" or "random"
+    # cause i cant decide (fade sucks)
     local transition_type="$TRANSITION_TYPE"
-    if [[ "$TRANSITION_TYPE" == "any" || "$TRANSITION_TYPE" == "random" ]]; then
-        local choices=("wipe" "center" "fade" "grow")
-        transition_type="${choices[$((RANDOM % ${#choices[@]}))]}"
+    if [[ "$TRANSITION_TYPE" =~ ^(any|random)$ ]]; then
+        local choices=(wipe center grow outer)
+        transition_type="${choices[$((RANDOM % 4))]}"
     fi
 
-    # Apply wallpaper with transition
+    # Apply 
     swww img "$wallpaper" \
         --transition-type "$transition_type" \
         --transition-duration "$TRANSITION_DURATION" \
         --transition-fps "$TRANSITION_FPS" \
         --transition-angle "$TRANSITION_ANGLE" \
-        --transition-pos "$TRANSITION_POS"
+        --transition-pos "$TRANSITION_POS" &
     
-    sleep 0.5  # Wait for transition to start
+    # Generate and apply blurred version
+    local blurred=$(blur_name "$wallpaper")
+    (
+        [[ ! -f "$blurred" ]] && make_blurred "$wallpaper" "$blurred"
+        swww img -n overview "$blurred" \
+            --transition-type "$transition_type" \
+            --transition-duration "$TRANSITION_DURATION" \
+            --transition-fps "$TRANSITION_FPS" 2>/dev/null 
+    ) &
     
-    # Update color scheme with pywal
-    wal -n -i "$wallpaper"
-    
-    # Update symlinks
-    ln -sf "$wallpaper" "$SYMLINK"
-    ln -sf "$wallpaper" ~/.cache/wal/current_wallpaper.png
-    
-    # Update app configs
-    cat ~/.cache/wal/colors-cava > ~/.config/cava/config 2>/dev/null || true
-    pkill -USR2 cava 2>/dev/null || true
-    
-    mkdir -p ~/.config/btop/themes
-    cat ~/.cache/wal/colors-btop.theme > ~/.config/btop/themes/pywal.theme 2>/dev/null || true
-    
-    mkdir -p ~/.config/nvim/colors
-    cat ~/.cache/wal/colors.vim > ~/.config/nvim/colors/pywal.vim 2>/dev/null || true
-    
-    # Reload Neovim instances with new colorscheme
-    for server in $(nvim --serverlist 2>/dev/null); do
-        nvim --server "$server" --remote-send '<Esc>:colorscheme pywal<CR>' 2>/dev/null &
-    done
-    
-    # Reload waybar
-    pkill -SIGUSR2 waybar 2>/dev/null || true
-    
-    # Close rofi instances
-    pkill rofi 2>/dev/null || true
+    # paypal
+    (
+        wal -n -q -i "$wallpaper"
+        
+        # Update symlinks
+        ln -sf "$wallpaper" "$SYMLINK"
+        ln -sf "$wallpaper" ~/.cache/wal/current_wallpaper.png
+        
+        # Update app configs nvim doesnt work iirc
+        {
+            [[ -f ~/.cache/wal/colors-cava ]] && cat ~/.cache/wal/colors-cava > ~/.config/cava/config
+            mkdir -p ~/.config/btop/themes
+            [[ -f ~/.cache/wal/colors-btop.theme ]] && cat ~/.cache/wal/colors-btop.theme > ~/.config/btop/themes/pywal.theme
+            mkdir -p ~/.config/nvim/colors
+            [[ -f ~/.cache/wal/colors.vim ]] && cat ~/.cache/wal/colors.vim > ~/.config/nvim/colors/pywal.vim
+        } 2>/dev/null
+
+[[ -f ~/.cache/wal/zathurarc ]] && cat ~/.cache/wal/zathurarc > ~/.config/zathura/zathurarc
+
+        # Reload apps
+        pkill -USR2 cava 2>/dev/null || true
+        pkill -SIGUSR2 waybar 2>/dev/null || true
+        pkill rofi 2>/dev/null || true
+        
+        # prob doesnt work
+        for server in $(nvim --serverlist 2>/dev/null); do
+            nvim --server "$server" --remote-send '<Esc>:colorscheme pywal<CR>' 2>/dev/null &
+        done
+
+	pgrep -x qutebrowser >/dev/null && qutebrowser --target auto ":config-source" 2>/dev/null &
+    ) &
 }
 
-# Main execution
+# execution
 main() {
-    # Check dependencies
+    # whatever
     for cmd in magick rofi swww wal; do
-        command -v "$cmd" &>/dev/null || { 
+        command -v "$cmd" >/dev/null || { 
             notify-send "Wallpaper Selector" "Error: $cmd not found"
             exit 1
         }
     done
     
-    # Cleanup orphaned thumbnails in background
-    cleanup_orphaned_thumbnails &
+    # clen
+    nice -n 19 bash -c "$(declare -f cleanup_orphaned_thumbnails); cleanup_orphaned_thumbnails" &
     
-    # Find all wallpapers
-    mapfile -t WALLPAPERS < <(
-        find "$WALLPAPER_DIR" \
-            -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.gif" -o -iname "*.webm" \) \
-            | sort
-    )
+    # Find all wallpapers 
+    mapfile -t WALLPAPERS < <(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.gif" -o -iname "*.webm" \) | sort)
     
-    if [[ ${#WALLPAPERS[@]} -eq 0 ]]; then
-        notify-send "Wallpaper Selector" "No wallpapers found in $WALLPAPER_DIR"
-        exit 1
-    fi
+    [[ ${#WALLPAPERS[@]} -eq 0 ]] && { notify-send "Wallpaper Selector" "No wallpapers found in $WALLPAPER_DIR"; exit 1; }
     
-    # Get current wallpaper for marking
+    # Get current wallpaper
     local current_wallpaper=""
     [[ -L "$SYMLINK" ]] && current_wallpaper=$(readlink -f "$SYMLINK")
     
-    # Generate thumbnails in parallel
-    local job_count=0
+    # Generate thumbnails 
+    local pids=()
     for img in "${WALLPAPERS[@]}"; do
         local thumb=$(thumb_name "$img")
         if [[ ! -f "$thumb" ]]; then
             make_thumb "$img" "$thumb" &
-            ((job_count++))
-            if ((job_count >= MAX_PARALLEL_JOBS)); then
-                wait -n
-                ((job_count--))
+            pids+=($!)
+            
+            # Wait when max jobs reached
+            if ((${#pids[@]} >= MAX_PARALLEL_JOBS)); then
+                wait "${pids[0]}" 2>/dev/null
+                pids=("${pids[@]:1}")
             fi
         fi
     done
     wait
     
-    # Build rofi entries with current wallpaper marker
-    local entries=""
+    # Build rofi entries
+    local entries=()
     for img in "${WALLPAPERS[@]}"; do
         local base=$(basename "$img")
         local thumb=$(thumb_name "$img")
         
         if [[ "$img" == "$current_wallpaper" ]]; then
-            entries+="● ${base}\x00icon\x1f${thumb}\n"
+            entries+=("● ${base}\x00icon\x1f${thumb}")
         else
-            entries+="${base}\x00icon\x1f${thumb}\n"
+            entries+=("${base}\x00icon\x1f${thumb}")
         fi
     done
     
     # Show rofi selector
     if [[ -f "$ROFI_THEME" ]]; then
-        SELECTED_NAME=$(printf "%b" "$entries" | rofi -dmenu -show-icons -i -p "Select Wallpaper" -theme "$ROFI_THEME") || exit 0
+        SELECTED_NAME=$(printf "%b\n" "${entries[@]}" | rofi -dmenu -show-icons -i -p "Select Wallpaper" -theme "$ROFI_THEME") || exit 0
     else
-        SELECTED_NAME=$(printf "%b" "$entries" | rofi -dmenu -show-icons -i -p "Select Wallpaper" \
+        SELECTED_NAME=$(printf "%b\n" "${entries[@]}" | rofi -dmenu -show-icons -i -p "Select Wallpaper" \
             -theme-str 'window {width: 60%; height: 70%;}' \
             -theme-str 'listview {columns: 3; lines: 4;}' \
             -theme-str 'element {padding: 5px; orientation: vertical;}' \
             -theme-str 'element-icon {size: 10em;}') || exit 0
     fi
     
-    # Remove marker if present
+    # Remove marker and find selected wallpaper
     SELECTED_NAME="${SELECTED_NAME#● }"
+    SELECTED=$(printf "%s\n" "${WALLPAPERS[@]}" | grep -F "/$SELECTED_NAME" | head -n1)
     
-    # Find selected wallpaper
-    SELECTED=$(printf "%s\n" "${WALLPAPERS[@]}" | grep -F "/$SELECTED_NAME" | head -n 1)
-    
-    if [[ -z "$SELECTED" ]]; then
-        notify-send "Wallpaper Selector" "Error: Could not find selected wallpaper"
-        exit 1
-    fi
+    [[ -z "$SELECTED" ]] && { notify-send "Wallpaper Selector" "Error: Could not find selected wallpaper"; exit 1; }
     
     # Apply wallpaper
     set_wallpaper "$SELECTED"

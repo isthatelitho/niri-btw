@@ -69,7 +69,7 @@ chmod +x path/to/scripts/
 
 ## 🎨 Customization
 
-Add your wallpapers to `~/Pictures/walls/` and press **Mod+N** to cycle through them.
+Add your wallpapers to `~/Pictures/walls/` and press **Mod+Shift+N** to open the wallpaper picker..
 
 Pywal will automatically generate and apply color schemes to waybar, rofi, kitty, btop, nvim and cava. 
 

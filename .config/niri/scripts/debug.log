@@ -1,0 +1,481 @@
++ set -euo pipefail
++ WALLPAPER_DIR=/home/eli/Pictures/walls
++ CACHE_DIR=/home/eli/.cache/rofi-wallpaper
++ THUMB_DIR=/home/eli/.cache/rofi-wallpaper/thumbs
++ SYMLINK=/home/eli/.cache/rofi-wallpaper/current_wallpaper
++ THUMBNAIL_SIZE=400x900
++ ROFI_THEME=/home/eli/.config/rofi/wallpaper.rasi
++ MAX_PARALLEL_JOBS=4
++ TRANSITION_TYPE=any
++ TRANSITION_DURATION=2
++ TRANSITION_FPS=60
++ TRANSITION_ANGLE=45
++ TRANSITION_POS=center
++ mkdir -p /home/eli/.cache/rofi-wallpaper/thumbs
++ main
++ for cmd in magick rofi swww wal
++ command -v magick
++ for cmd in magick rofi swww wal
++ command -v rofi
++ for cmd in magick rofi swww wal
++ command -v swww
++ for cmd in magick rofi swww wal
++ command -v wal
++ mapfile -t WALLPAPERS
++ cleanup_orphaned_thumbnails
++ local -A valid_thumbnails
++ IFS=
++ read -r -d '' image
+++ find /home/eli/Pictures/walls -type f '(' -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.gif' -o -iname '*.webm' ')' -print0
+++ find /home/eli/Pictures/walls -type f '(' -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' -o -iname '*.gif' -o -iname '*.webm' ')'
+++ sort
+++ printf %s /home/eli/Pictures/walls/walllpaper01.png
+++ md5sum
++ [[ 28 -eq 0 ]]
++ local current_wallpaper=
++ [[ -L /home/eli/.cache/rofi-wallpaper/current_wallpaper ]]
+++ cut '-d ' -f1
+++ readlink -f /home/eli/.cache/rofi-wallpaper/current_wallpaper
++ current_wallpaper=/home/eli/Pictures/walls/1692392758953497.jpg
++ local job_count=0
++ local thumb_hash=417c70c276e0b9b560fd99a4282133af
++ valid_thumbnails["${thumb_hash}.png"]=1
++ for img in "${WALLPAPERS[@]}"
++ IFS=
++ read -r -d '' image
+++ thumb_name /home/eli/Pictures/walls/1692392758953497.jpg
+++ local img=/home/eli/Pictures/walls/1692392758953497.jpg
+++ printf %s /home/eli/Pictures/walls/walllpaper02.png
+++ md5sum
++++ printf %s /home/eli/Pictures/walls/1692392758953497.jpg
++++ cut '-d ' -f1
++++ md5sum
+++ cut '-d ' -f1
++ local thumb_hash=26bded5e49b0295f425c106e56755225
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ local hash=910c26a3b608d5823635a30bea7fb8fc
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/910c26a3b608d5823635a30bea7fb8fc.png
+++ printf %s /home/eli/Pictures/walls/walllpaper06.jpg
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/910c26a3b608d5823635a30bea7fb8fc.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/910c26a3b608d5823635a30bea7fb8fc.png ]]
++ for img in "${WALLPAPERS[@]}"
+++ md5sum
+++ thumb_name /home/eli/Pictures/walls/1707673517965987.jpg
+++ local img=/home/eli/Pictures/walls/1707673517965987.jpg
+++ cut '-d ' -f1
++++ printf %s /home/eli/Pictures/walls/1707673517965987.jpg
++++ cut '-d ' -f1
++++ md5sum
++ local thumb_hash=d680264ade538df26c051214595f62b7
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ printf %s /home/eli/Pictures/walls/walllpaper07.png
+++ md5sum
+++ cut '-d ' -f1
+++ local hash=848a93bc4ccb647f0d31cb7e786c9c89
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/848a93bc4ccb647f0d31cb7e786c9c89.png
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/848a93bc4ccb647f0d31cb7e786c9c89.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/848a93bc4ccb647f0d31cb7e786c9c89.png ]]
++ for img in "${WALLPAPERS[@]}"
+++ thumb_name /home/eli/Pictures/walls/1718926422170650.jpg
+++ local img=/home/eli/Pictures/walls/1718926422170650.jpg
++ local thumb_hash=0b96d76e8fde99504c0fe852f8a03945
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
++++ printf %s /home/eli/Pictures/walls/1718926422170650.jpg
+++ printf %s /home/eli/Pictures/walls/walllpaper08.png
++++ md5sum
++++ cut '-d ' -f1
+++ md5sum
+++ cut '-d ' -f1
+++ local hash=7196c72a890ff6baffbd47a17432ddf5
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/7196c72a890ff6baffbd47a17432ddf5.png
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/7196c72a890ff6baffbd47a17432ddf5.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/7196c72a890ff6baffbd47a17432ddf5.png ]]
++ for img in "${WALLPAPERS[@]}"
++ local thumb_hash=dc59d8b78afe4ba49d14c5c0623c5921
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ thumb_name /home/eli/Pictures/walls/wallhaven-1qpw9v_1920x1080.png
+++ local img=/home/eli/Pictures/walls/wallhaven-1qpw9v_1920x1080.png
+++ printf %s /home/eli/Pictures/walls/walllpaper10.png
++++ md5sum
+++ md5sum
++++ printf %s /home/eli/Pictures/walls/wallhaven-1qpw9v_1920x1080.png
+++ cut '-d ' -f1
++++ cut '-d ' -f1
++ local thumb_hash=8c028b99b5434715c4b54c520859550b
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ local hash=f226c9a235defc2697771d7bc74d3c00
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/f226c9a235defc2697771d7bc74d3c00.png
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/f226c9a235defc2697771d7bc74d3c00.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/f226c9a235defc2697771d7bc74d3c00.png ]]
++ for img in "${WALLPAPERS[@]}"
+++ thumb_name /home/eli/Pictures/walls/wallhaven-21ydwg_1920x1080.png
+++ local img=/home/eli/Pictures/walls/wallhaven-21ydwg_1920x1080.png
+++ md5sum
+++ printf %s /home/eli/Pictures/walls/walllpaper11.png
+++ cut '-d ' -f1
++++ cut '-d ' -f1
++++ printf %s /home/eli/Pictures/walls/wallhaven-21ydwg_1920x1080.png
++++ md5sum
++ local thumb_hash=5010826ce6dbbe8ee13e15d988415440
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ printf %s /home/eli/Pictures/walls/walllpaper12.png
+++ local hash=c915c91e9fce6727fe09df449a3bb86a
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/c915c91e9fce6727fe09df449a3bb86a.png
+++ md5sum
+++ cut '-d ' -f1
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/c915c91e9fce6727fe09df449a3bb86a.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/c915c91e9fce6727fe09df449a3bb86a.png ]]
++ for img in "${WALLPAPERS[@]}"
+++ thumb_name /home/eli/Pictures/walls/wallhaven-d8p83m_1920x1080.png
+++ local img=/home/eli/Pictures/walls/wallhaven-d8p83m_1920x1080.png
++ local thumb_hash=68adfd791be7f0599b4b2ce14434cd42
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
++++ printf %s /home/eli/Pictures/walls/wallhaven-d8p83m_1920x1080.png
++++ md5sum
+++ printf %s /home/eli/Pictures/walls/walllpaper13.png
++++ cut '-d ' -f1
+++ md5sum
+++ cut '-d ' -f1
+++ local hash=42d5e5049f36f6f20ac5ae052b02dc73
++ local thumb_hash=962900d05d8252e4b805bcd2edf262af
++ valid_thumbnails["${thumb_hash}.png"]=1
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/42d5e5049f36f6f20ac5ae052b02dc73.png
++ IFS=
++ read -r -d '' image
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/42d5e5049f36f6f20ac5ae052b02dc73.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/42d5e5049f36f6f20ac5ae052b02dc73.png ]]
++ for img in "${WALLPAPERS[@]}"
+++ thumb_name /home/eli/Pictures/walls/wallhaven-e88g18_1920x1080.png
+++ local img=/home/eli/Pictures/walls/wallhaven-e88g18_1920x1080.png
+++ md5sum
+++ cut '-d ' -f1
+++ printf %s /home/eli/Pictures/walls/walllpaper16.png
++++ printf %s /home/eli/Pictures/walls/wallhaven-e88g18_1920x1080.png
++++ cut '-d ' -f1
++++ md5sum
++ local thumb_hash=e991f5ffcd2be51ca620cf90f1670b1f
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ printf %s /home/eli/Pictures/walls/walllpaper17.png
+++ md5sum
+++ cut '-d ' -f1
+++ local hash=7cefb04c1a64646805afd6050e8c84a6
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/7cefb04c1a64646805afd6050e8c84a6.png
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/7cefb04c1a64646805afd6050e8c84a6.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/7cefb04c1a64646805afd6050e8c84a6.png ]]
++ for img in "${WALLPAPERS[@]}"
+++ thumb_name /home/eli/Pictures/walls/wallhaven-qr9jml_1920x1080.png
+++ local img=/home/eli/Pictures/walls/wallhaven-qr9jml_1920x1080.png
++ local thumb_hash=f3a6a8b19d1a5c06f9373bcbb1573236
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
++++ printf %s /home/eli/Pictures/walls/wallhaven-qr9jml_1920x1080.png
++++ md5sum
++++ cut '-d ' -f1
+++ md5sum
+++ printf %s /home/eli/Pictures/walls/walllpaper20.png
+++ cut '-d ' -f1
+++ local hash=52992d3d4a7d98bc182fefb4ee185089
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/52992d3d4a7d98bc182fefb4ee185089.png
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/52992d3d4a7d98bc182fefb4ee185089.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/52992d3d4a7d98bc182fefb4ee185089.png ]]
++ for img in "${WALLPAPERS[@]}"
+++ thumb_name /home/eli/Pictures/walls/wallhaven-w5e7jr_1920x1080.png
+++ local img=/home/eli/Pictures/walls/wallhaven-w5e7jr_1920x1080.png
++++ printf %s /home/eli/Pictures/walls/wallhaven-w5e7jr_1920x1080.png
++ local thumb_hash=1de534588653046a9d983b137b330527
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
++++ md5sum
++++ cut '-d ' -f1
+++ printf %s /home/eli/Pictures/walls/walllpaper21.png
+++ md5sum
+++ cut '-d ' -f1
+++ local hash=a5a6ce8b87e09286a00f357e668e2717
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/a5a6ce8b87e09286a00f357e668e2717.png
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/a5a6ce8b87e09286a00f357e668e2717.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/a5a6ce8b87e09286a00f357e668e2717.png ]]
++ for img in "${WALLPAPERS[@]}"
+++ thumb_name /home/eli/Pictures/walls/wallhaven-xe8yqd_1920x1080.png
+++ local img=/home/eli/Pictures/walls/wallhaven-xe8yqd_1920x1080.png
++ local thumb_hash=5e9fba4d081ce43b15719ea8ea179c86
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
++++ printf %s /home/eli/Pictures/walls/wallhaven-xe8yqd_1920x1080.png
++++ md5sum
++++ cut '-d ' -f1
+++ printf %s /home/eli/Pictures/walls/walllpaper25.png
+++ cut '-d ' -f1
+++ md5sum
+++ local hash=2ccda66e45752d4f13e1a22f96cead30
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/2ccda66e45752d4f13e1a22f96cead30.png
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/2ccda66e45752d4f13e1a22f96cead30.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/2ccda66e45752d4f13e1a22f96cead30.png ]]
++ for img in "${WALLPAPERS[@]}"
++ local thumb_hash=15b3768d531731270bfb406d09286b07
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ thumb_name /home/eli/Pictures/walls/wallhaven-yqjd9g_1920x1080.png
+++ local img=/home/eli/Pictures/walls/wallhaven-yqjd9g_1920x1080.png
+++ printf %s /home/eli/Pictures/walls/walllpaper27.jpg
+++ md5sum
++++ md5sum
++++ printf %s /home/eli/Pictures/walls/wallhaven-yqjd9g_1920x1080.png
+++ cut '-d ' -f1
++++ cut '-d ' -f1
+++ local hash=41b7bdc18ee2f437373b943e2ad1bba0
++ local thumb_hash=9a3ee73d8ac395a124352973a9c564f9
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/41b7bdc18ee2f437373b943e2ad1bba0.png
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/41b7bdc18ee2f437373b943e2ad1bba0.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/41b7bdc18ee2f437373b943e2ad1bba0.png ]]
++ for img in "${WALLPAPERS[@]}"
+++ thumb_name /home/eli/Pictures/walls/wallhaven-zp85do_1920x1080.png
+++ printf %s /home/eli/Pictures/walls/walllpaper29.png
+++ local img=/home/eli/Pictures/walls/wallhaven-zp85do_1920x1080.png
+++ md5sum
+++ cut '-d ' -f1
++++ md5sum
++++ printf %s /home/eli/Pictures/walls/wallhaven-zp85do_1920x1080.png
++ local thumb_hash=3f1c5ef0a5eb2bd346f1044bc72128b4
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
++++ cut '-d ' -f1
+++ printf %s /home/eli/Pictures/walls/1707673517965987.jpg
+++ md5sum
+++ local hash=9fe4ec51bed57f195905c42ef84e22a5
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/9fe4ec51bed57f195905c42ef84e22a5.png
+++ cut '-d ' -f1
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/9fe4ec51bed57f195905c42ef84e22a5.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/9fe4ec51bed57f195905c42ef84e22a5.png ]]
++ for img in "${WALLPAPERS[@]}"
++ local thumb_hash=848a93bc4ccb647f0d31cb7e786c9c89
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ thumb_name /home/eli/Pictures/walls/walllpaper01.png
+++ local img=/home/eli/Pictures/walls/walllpaper01.png
+++ printf %s /home/eli/Pictures/walls/1692392758953497.jpg
++++ md5sum
+++ md5sum
++++ printf %s /home/eli/Pictures/walls/walllpaper01.png
++++ cut '-d ' -f1
+++ cut '-d ' -f1
++ local thumb_hash=910c26a3b608d5823635a30bea7fb8fc
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ printf %s /home/eli/Pictures/walls/1718926422170650.jpg
+++ md5sum
+++ local hash=417c70c276e0b9b560fd99a4282133af
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/417c70c276e0b9b560fd99a4282133af.png
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/417c70c276e0b9b560fd99a4282133af.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/417c70c276e0b9b560fd99a4282133af.png ]]
++ for img in "${WALLPAPERS[@]}"
+++ cut '-d ' -f1
+++ thumb_name /home/eli/Pictures/walls/walllpaper02.png
+++ local img=/home/eli/Pictures/walls/walllpaper02.png
++++ printf %s /home/eli/Pictures/walls/walllpaper02.png
++ local thumb_hash=7196c72a890ff6baffbd47a17432ddf5
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
++++ md5sum
++++ cut '-d ' -f1
+++ printf %s /home/eli/Pictures/walls/wallhaven-yqjd9g_1920x1080.png
+++ md5sum
+++ local hash=26bded5e49b0295f425c106e56755225
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/26bded5e49b0295f425c106e56755225.png
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/26bded5e49b0295f425c106e56755225.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/26bded5e49b0295f425c106e56755225.png ]]
++ for img in "${WALLPAPERS[@]}"
+++ thumb_name /home/eli/Pictures/walls/walllpaper06.jpg
+++ local img=/home/eli/Pictures/walls/walllpaper06.jpg
+++ cut '-d ' -f1
++++ printf %s /home/eli/Pictures/walls/walllpaper06.jpg
++++ cut '-d ' -f1
++++ md5sum
++ local thumb_hash=41b7bdc18ee2f437373b943e2ad1bba0
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ printf %s /home/eli/Pictures/walls/wallhaven-xe8yqd_1920x1080.png
+++ md5sum
+++ cut '-d ' -f1
+++ local hash=d680264ade538df26c051214595f62b7
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/d680264ade538df26c051214595f62b7.png
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/d680264ade538df26c051214595f62b7.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/d680264ade538df26c051214595f62b7.png ]]
++ for img in "${WALLPAPERS[@]}"
+++ thumb_name /home/eli/Pictures/walls/walllpaper07.png
+++ local img=/home/eli/Pictures/walls/walllpaper07.png
++ local thumb_hash=2ccda66e45752d4f13e1a22f96cead30
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ printf %s /home/eli/Pictures/walls/wallhaven-1qpw9v_1920x1080.png
++++ printf %s /home/eli/Pictures/walls/walllpaper07.png
+++ md5sum
++++ md5sum
+++ cut '-d ' -f1
++++ cut '-d ' -f1
+++ local hash=0b96d76e8fde99504c0fe852f8a03945
+++ echo /home/eli/.cache/rofi-wallpaper/thumbs/0b96d76e8fde99504c0fe852f8a03945.png
++ local thumb_hash=f226c9a235defc2697771d7bc74d3c00
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/0b96d76e8fde99504c0fe852f8a03945.png
++ [[ ! -f /home/eli/.cache/rofi-wallpaper/thumbs/0b96d76e8fde99504c0fe852f8a03945.png ]]
++ (( job_count++ ))
++ make_thumb /home/eli/Pictures/walls/walllpaper07.png /home/eli/.cache/rofi-wallpaper/thumbs/0b96d76e8fde99504c0fe852f8a03945.png
+++ printf %s /home/eli/Pictures/walls/wallhaven-w5e7jr_1920x1080.png
++ local img=/home/eli/Pictures/walls/walllpaper07.png
++ local thumb=/home/eli/.cache/rofi-wallpaper/thumbs/0b96d76e8fde99504c0fe852f8a03945.png
+++ basename /home/eli/Pictures/walls/walllpaper07.png
+++ md5sum
+++ cut '-d ' -f1
++ local base=walllpaper07.png
++ local name=walllpaper07
++ file --mime-type -b /home/eli/Pictures/walls/walllpaper07.png
++ grep -q '^video/'
++ local thumb_hash=a5a6ce8b87e09286a00f357e668e2717
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ printf %s /home/eli/Pictures/walls/wallhaven-e88g18_1920x1080.png
+++ md5sum
+++ cut '-d ' -f1
++ local thumb_hash=7cefb04c1a64646805afd6050e8c84a6
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ printf %s /home/eli/Pictures/walls/wallhaven-qr9jml_1920x1080.png
+++ md5sum
+++ cut '-d ' -f1
++ local thumb_hash=52992d3d4a7d98bc182fefb4ee185089
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ printf %s /home/eli/Pictures/walls/wallhaven-d8p83m_1920x1080.png
+++ md5sum
+++ cut '-d ' -f1
++ local thumb_hash=42d5e5049f36f6f20ac5ae052b02dc73
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ printf %s /home/eli/Pictures/walls/wallhaven-zp85do_1920x1080.png
+++ md5sum
+++ cut '-d ' -f1
++ local thumb_hash=9fe4ec51bed57f195905c42ef84e22a5
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
+++ printf %s /home/eli/Pictures/walls/wallhaven-21ydwg_1920x1080.png
+++ md5sum
+++ cut '-d ' -f1
++ local thumb_hash=c915c91e9fce6727fe09df449a3bb86a
++ valid_thumbnails["${thumb_hash}.png"]=1
++ IFS=
++ read -r -d '' image
++ IFS=
++ read -r -d '' thumbnail
+++ find /home/eli/.cache/rofi-wallpaper/thumbs -type f -name '*.png' -print0
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/910c26a3b608d5823635a30bea7fb8fc.png
++ local thumb_name=910c26a3b608d5823635a30bea7fb8fc.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/848a93bc4ccb647f0d31cb7e786c9c89.png
++ local thumb_name=848a93bc4ccb647f0d31cb7e786c9c89.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/7196c72a890ff6baffbd47a17432ddf5.png
++ local thumb_name=7196c72a890ff6baffbd47a17432ddf5.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/f226c9a235defc2697771d7bc74d3c00.png
++ local thumb_name=f226c9a235defc2697771d7bc74d3c00.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/c915c91e9fce6727fe09df449a3bb86a.png
++ local thumb_name=c915c91e9fce6727fe09df449a3bb86a.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/42d5e5049f36f6f20ac5ae052b02dc73.png
++ local thumb_name=42d5e5049f36f6f20ac5ae052b02dc73.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/7cefb04c1a64646805afd6050e8c84a6.png
++ local thumb_name=7cefb04c1a64646805afd6050e8c84a6.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/52992d3d4a7d98bc182fefb4ee185089.png
++ local thumb_name=52992d3d4a7d98bc182fefb4ee185089.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/a5a6ce8b87e09286a00f357e668e2717.png
++ local thumb_name=a5a6ce8b87e09286a00f357e668e2717.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/2ccda66e45752d4f13e1a22f96cead30.png
++ local thumb_name=2ccda66e45752d4f13e1a22f96cead30.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/41b7bdc18ee2f437373b943e2ad1bba0.png
++ local thumb_name=41b7bdc18ee2f437373b943e2ad1bba0.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/9fe4ec51bed57f195905c42ef84e22a5.png
++ local thumb_name=9fe4ec51bed57f195905c42ef84e22a5.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/417c70c276e0b9b560fd99a4282133af.png
++ local thumb_name=417c70c276e0b9b560fd99a4282133af.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/26bded5e49b0295f425c106e56755225.png
++ local thumb_name=26bded5e49b0295f425c106e56755225.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
+++ basename /home/eli/.cache/rofi-wallpaper/thumbs/d680264ade538df26c051214595f62b7.png
++ local thumb_name=d680264ade538df26c051214595f62b7.png
++ [[ -z 1 ]]
++ IFS=
++ read -r -d '' thumbnail
++ magick '/home/eli/Pictures/walls/walllpaper07.png[0]' -strip -resize '400x900^' -gravity center -extent 400x900 /home/eli/.cache/rofi-wallpaper/thumbs/0b96d76e8fde99504c0fe852f8a03945.png

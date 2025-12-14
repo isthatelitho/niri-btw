@@ -46,7 +46,6 @@ input {
         accel-profile "flat"
         // scroll-method "no-scroll"
     }
-
     trackpoint {
         // off
         // natural-scroll
@@ -66,6 +65,10 @@ input {
     focus-follows-mouse max-scroll-amount="30%"
 }
 
+cursor {
+    xcursor-theme "mcmojave cursors"
+    xcursor-size 50
+}
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -108,7 +111,7 @@ output "eDP-1" {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 4
+    gaps 20
 
     background-color "transparent"
 
@@ -239,11 +242,14 @@ layer-rule {
     match namespace="^wallpaper$"
     place-within-backdrop true
 }
+
 layer-rule {
-    match namespace="^launcher$"
-    shadow {
-    	on
-    }
+    match namespace="overview"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^waybar$"
 }
 
 // You can also set this to null to disable saving screenshots to disk.
@@ -305,7 +311,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     MOD+RETURN      { spawn-sh "kitty"; }
     MOD+SPACE       { spawn-sh "rofi -show drun -pid /tmp/rofi.pid"; }
-    MOD+B           { spawn-sh "firefox"; }
+    MOD+B           { spawn-sh "qutebrowser"; }
     Mod+Z           { spawn-sh "/home/eli/.config/niri/scripts/toggle-waybar.sh"; }
     Mod+N           { spawn-sh "/home/eli/.config/niri/scripts/random-wall.sh"; }
     Mod+Shift+Z     { spawn "sh" "-c" "~/.config/niri/scripts/toggle-rotation.sh"; }

@@ -6,6 +6,10 @@ function fish_greeting
 #    # smth smth
 end
 
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+
+
 alias ffa='anifetch Downloads/nisioisin-anime.mp4 -ff -r 10 -W 40 -H 20 -c "--symbols wide --fg-only"; printf '\033c'; stty sane'
 alias ytp='pipe-viewer'
 alias ytaudio='yt-dlp --js-runtimes deno:/home/eli/.deno/bin/deno --remote-components ejs:github --format "bestaudio" --extract-audio --audio-format "mp3" --audio-quality "0"'
@@ -16,3 +20,4 @@ alias up="cd .."
 alias osu-import='~/.config/niri/scripts/osu-organize.sh'
 alias gpush='git push origin main'
 alias ff='clear && fastfetch'
+alias smallfetch='fastfetch --config ~/.config/fastfetch/smallfetch.jsonc'

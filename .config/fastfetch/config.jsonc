@@ -1,22 +1,77 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "logo": {
-    "source": "none"
-  },
-  "display": {
-    "separator": " "
-  },
-  "modules": [
-    "title",
-    "os",
-    "kernel",
-    "uptime",
-    "shell",
-    "terminal",
-    "break",
-    {
-      "type": "custom",
-      "format": "\u001b[90m■ \u001b[31m■ \u001b[32m■ \u001b[33m■ \u001b[34m■ \u001b[35m■ \u001b[36m■ \u001b[37m■"
-    }
-  ]
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "kitty-icat",
+        "source": "~/.config/fastfetch/logo.gif",
+	"width": 25,
+        "height": 10,
+        "padding": {
+          "top": 0,
+          "right": 0
+        }
+    },
+    "display": {
+        "separator": ">  ",
+        "color": {
+            "separator": "red"
+        },
+        "constants": [
+            "─────────────────────────────────────────────────────────────────",
+            "│\u001b[65C│\u001b[65D"
+        ]
+    },
+    "modules": [
+    	{
+		"type": "break"
+  	},
+	    {
+            "format": "{#1}{#keys}╭{$1}╮\u001b[66D {user-name-colored}{at-symbol-colored}{host-name-colored} ",
+            "type": "title"
+        },
+        {
+            "key": "{$2}{#31} kernel   ",
+            "type": "kernel"
+        },
+        {
+            "key": "{$2}{#32}󰅐 uptime   ",
+            "type": "uptime"
+        },
+        {
+            "key": "{$2}{#33}{icon} distro   ",
+            "type": "os"
+        },
+        {
+            "key": "{$2}{#34}󰇄 desktop  ",
+            "type": "de"
+        },
+        {
+            "key": "{$2}{#35} term     ",
+            "type": "terminal"
+        },
+        {
+            "key": "{$2}{#36} shell    ",
+            "type": "shell"
+        },
+        {
+            "key": "{$2}{#35}󰍛 cpu      ",
+            "type": "cpu"
+        },
+        {
+            "key": "{$2}{#34}󰍛 gpu      ",
+            "type": "gpu"
+        },
+        {
+            "format": "{#1}{#keys}├{$1}┤",
+            "type": "custom"
+        },
+        {
+            "key": "{$2}{#39} colors   ",
+            "type": "colors",
+            "symbol": "circle"
+        },
+        {
+            "format": "{#1}{#keys}╰{$1}╯",
+            "type": "custom"
+        }
+    ]
 }
