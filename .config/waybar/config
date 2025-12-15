@@ -8,13 +8,10 @@
         "niri/workspaces",
         "custom/separator",
         "custom/mpc",
-        "custom/separator"
     ],
 
     "modules-center": [
-        "custom/separator",
         "custom/power",
-        "custom/separator",
         "custom/recorder"
     ],
 
@@ -25,7 +22,6 @@
         "pulseaudio",
         "custom/separator",
         "clock",
-        "custom/separator"
     ],
 
     "niri/workspaces": {

@@ -44,6 +44,8 @@ c.url.default_page = 'https://prettycoffee.github.io/yet-another-generic-startpa
 
 # ===== KEY BINDINGS =====
 
+config.bind('<Ctrl-f>', 'fake-key f')
+
 # save session when closing/undoing tabs
 nmap('d', 'tab-close ;; session-save --force _autosave')
 nmap('u', 'undo ;; session-save --force _autosave')
@@ -117,3 +119,5 @@ if 'EDITOR' in os.environ:
 # prefer qutebrowser-edit if available
 if which("qutebrowser-edit"):
     c.editor.command = [which("qutebrowser-edit"), '-l{line}', '-c{column}', '-f{file}']
+
+

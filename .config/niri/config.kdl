@@ -32,7 +32,7 @@ input {
         // dwtp
         // drag false
         // drag-lock
-        natural-scroll
+        //natural-scroll
         accel-speed 0.3
         // accel-profile "flat"
         // scroll-method "two-finger"
@@ -291,6 +291,11 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    match app-id="vesktop"
+    opacity 0.9
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -332,6 +337,7 @@ binds {
     Mod+Shift+Z     { spawn "sh" "-c" "~/.config/niri/scripts/toggle-rotation.sh"; }
     Mod+X           { spawn-sh "killall waybar && waybar &"; }
     Mod+E           { spawn-sh "nautilus"; }
+    Mod+T	    { spawn-sh "alacritty"; }
     Mod+Alt+L       { spawn "swaylock"; }
     Mod+Shift+Print { spawn-sh "/home/eli/.config/niri/scripts/screen-record.sh"; }
     Mod+Shift+N     { spawn-sh "/home/eli/.config/niri/scripts/wallpaper-selector.sh"; }
