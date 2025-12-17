@@ -12,12 +12,12 @@ fi
 
 case "$current" in
     balanced)
-        echo '{"text":"[<u>BAL</u> PER BTR]","tooltip":"Current: balanced\nClick to cycle","class":"balanced"}'
+        echo '{"text":"<u>BAL</u> PER BTR","tooltip":"Current: balanced\nClick to cycle","class":"balanced"}'
         ;;
     performance)
-        echo '{"text":"[BAL <u>PER</u> BTR]","tooltip":"Current: performance\nClick to cycle","class":"performance"}'
+        echo '{"text":"BAL <u>PER</u> BTR","tooltip":"Current: performance\nClick to cycle","class":"performance"}'
         ;;
     power-saver)
-        echo '{"text":"[BAL PER <u>BTR</u>]","tooltip":"Current: power-saver\nClick to cycle","class":"power-saver"}'
+        echo '{"text":"BAL PER <u>BTR</u>","tooltip":"Current: power-saver\nClick to cycle","class":"power-saver"}'
         ;;
 esac

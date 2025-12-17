@@ -16,7 +16,7 @@ vim.call('plug#end')
 -- basic settings
 vim.opt.termguicolors = true
 vim.cmd.colorscheme('pywal16')
-
+vim.opt.backupcopy = "yes"
 -- line numbers
 vim.o.number = true
 vim.o.relativenumber = true

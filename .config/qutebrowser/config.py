@@ -39,8 +39,8 @@ c.url.searchengines = {
     'alm': 'https://anilist.co/search/manga?search={}',
     'yt': 'https://www.youtube.com/results?search_query={}'
 }
-c.url.start_pages = ['https://prettycoffee.github.io/yet-another-generic-startpage/']
-c.url.default_page = 'https://prettycoffee.github.io/yet-another-generic-startpage/'
+c.url.start_pages = ['https://www.koryschneider.com/tab/']
+c.url.default_page = 'https://www.koryschneider.com/tab/'
 
 # ===== KEY BINDINGS =====
 

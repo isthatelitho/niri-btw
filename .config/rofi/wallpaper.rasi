@@ -1,10 +1,8 @@
 @import "~/.cache/wal/colors-rofi-dark"
-
 configuration {
     show-icons: true;
     disable-history: false;
 }
-
 * {
     font: "uzura_font 9";
     background-color: transparent;
@@ -13,15 +11,13 @@ configuration {
     padding: 0px;
     spacing: 0px;
     border-color: transparent;
-    border: 0px; 
+    border: 0px;
 }
-
 window {
     fullscreen: true;
-    background-color: #00000000;
+    background-color: #000000dd;
     transparency: "real";
 }
-
 mainbox {
     padding: 0px 0px 0px 0px;
     background-color: transparent;
@@ -31,67 +27,62 @@ mainbox {
     spacing: 0px;
     margin: 0px;
 }
-
 inputbar {
     enabled: false;
 }
-
 listview {
     orientation: horizontal;
     background-color: transparent;
     columns: 7;
     lines: 2;
-    spacing: 0px;
+    spacing: 15px;
     cycle: false;
     scrollbar: false;
     fixed-height: true;
     flow: horizontal;
-    padding: 25% 0% 0% 0%;
+    padding: 25% 5% 0% 5%;
     separator: false;
 }
-
 element {
     orientation: vertical;
-    padding: 0px;
+    padding: 12px;
     spacing: 0px;
-    border-radius: 0px;
+    border-radius: 16px;
     background-color: transparent;
     border: 0px;
 }
-
 element.normal.normal {
-    background-color: transparent;
+    background-color: #1a1a1a80;
     border: 0px;
     border-color: transparent;
+    border-radius: 16px;
 }
-
 element.selected.normal {
-    background-color: transparent;
-    border: 5px solid;
+    background-color: #2a2a2a99;
+    border: 3px solid;
     border-color: @foreground;
+    border-radius: 16px;
 }
-
 element.normal.active {
     background-color: @selected-normal-background;
     border: 2px solid;
     border-color: @selected-normal-background;
+    border-radius: 16px;
 }
-
 element.selected.active {
-    background-color: transparent;
-    border: 0px solid;
+    background-color: #2a2a2a99;
+    border: 3px solid;
     border-color: @foreground;
+    border-radius: 16px;
 }
-
 element-icon {
     size: 229px 540px;
-    border-radius: 0px;
+    border-radius: 14px;
     background-color: transparent;
     horizontal-align: 0.5;
     vertical-align: 0.5;
     margin: 0px;
 }
-
 element-text {
     enabled: false;
 }

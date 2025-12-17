@@ -3,11 +3,11 @@
 * {
     font-family: "uzura_font", monospace;
     font-size: 20px;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 window#waybar {
-    background-color: @background;
+    background-color: @color5;
     color: @color5;
 }
 
@@ -27,7 +27,7 @@ window#waybar {
 
 #workspaces button.active {
     background-color: @color5;
-    color: @foreground;
+    color: @background;
     font-weight: bold;
     border-radius: 0;
 }
@@ -36,6 +36,18 @@ window#waybar {
     background: @color5;
     color: @foreground;
     border-radius: 0;
+}
+
+#custom-mpc {
+    padding: 0 7px;
+    background-color: @background;
+    color: @color7;
+}
+
+#custom-power {
+    padding: 0 7px;
+    background-color: @background;
+    color: @color8;
 }
 
 #clock {

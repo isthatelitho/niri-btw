@@ -28,42 +28,42 @@ set zoom-min 10
 # ============================================================================
 
 # Default colors
-set default-bg "#0c0c1d"
-set default-fg "#4B6E91"
+set default-bg "#060c10"
+set default-fg "#DEA68B"
 
 # Status bar
-set statusbar-fg "#c2c2c6"
-set statusbar-bg "#0c0c1d"
+set statusbar-fg "#c0c2c3"
+set statusbar-bg "#060c10"
 
 # Input bar
-set inputbar-bg "#0c0c1d"
-set inputbar-fg "#c2c2c6"
+set inputbar-bg "#060c10"
+set inputbar-fg "#c0c2c3"
 
 # Notifications
-set notification-error-bg "#414755"
-set notification-error-fg "#0c0c1d"
-set notification-warning-bg "#B04638"
-set notification-warning-fg "#0c0c1d"
-set notification-bg "#5A5B60"
-set notification-fg "#0c0c1d"
+set notification-error-bg "#E1967D"
+set notification-error-fg "#060c10"
+set notification-warning-bg "#B09D90"
+set notification-warning-fg "#060c10"
+set notification-bg "#E8A26A"
+set notification-fg "#060c10"
 
 # Highlighting
-# set highlight-color "#B04638"
-# set highlight-active-color "#978577"
+# set highlight-color "#B09D90"
+# set highlight-active-color "#E29A82"
 
 # Completion menu
-set completion-highlight-fg "#0c0c1d"
-set completion-highlight-bg "#978577"
-set completion-bg "#0c0c1d"
-set completion-fg "#c2c2c6"
+set completion-highlight-fg "#060c10"
+set completion-highlight-bg "#E29A82"
+set completion-bg "#060c10"
+set completion-fg "#c0c2c3"
 
 # ============================================================================
 # Recolor (Dark Mode for Documents)
 # ============================================================================
 
 set recolor "true"
-set recolor-lightcolor "#0c0c1d"
-set recolor-darkcolor "#4B6E91"
+set recolor-lightcolor "#060c10"
+set recolor-darkcolor "#DEA68B"
 set recolor-reverse-video "true"
 set recolor-keephue "true"
 

@@ -19,30 +19,38 @@ configuration {
     margin: 0;
     padding: 0;
     spacing: 0;
+    border-radius: 0;
 }
 
 window {
     location: center;
     width: 700;
     background-color: @background;
+    border-radius: 0px;
+    border: 2px solid;
+    border-color: @selected-normal-background;
 }
 
 mainbox {
     orientation: vertical;
     children: [ inputbar, content-box ];
+    border-radius: 0px;
 }
 
 inputbar {
     background-image: url("~/.cache/wal/current_wallpaper.png", width);
     padding: 180px 60px 40px 60px;
-    spacing: 8px;
+    spacing: 12px;
     children: [ prompt, entry ];
+    border-radius: 0px 0px 0px 0px;
 }
 
 prompt {
-    text-color: @foreground;
-    background-color: @normal-background;
-    padding: 14px 16px;
+    text-color: @background;
+    background-color: @foreground;
+    padding: 16px 20px;
+    border-radius: 0px;
+    font: "uzura_font bold 18";
 }
 
 entry {
@@ -50,57 +58,69 @@ entry {
     placeholder-color: @urgent-background;
     text-color: @foreground;
     background-color: @normal-background;
-    padding: 14px 16px;
+    padding: 16px 20px;
+    border-radius: 0px;
+    border: 2px solid;
+    border-color: @selected-normal-background;
 }
 
 content-box {
-    padding: 12px;
+    padding: 16px;
     background-color: @background;
     children: [ message, listview ];
+    border-radius: 0 0 0px 0px;
 }
 
 message {
     margin: 0 0 12px 0;
     background-color: @normal-background;
+    border-radius: 0px;
 }
 
 textbox {
     padding: 12px;
+    border-radius: 0px;
 }
 
 listview {
     columns: 1;
-    lines: 6;
-    spacing: 6px;
+    lines: 3;
+    spacing: 8px;
     fixed-height: true;
 }
 
 element {
-    padding: 12px 16px;
-    spacing: 12px;
+    padding: 14px 18px;
+    spacing: 14px;
+    border-radius: 0px;
 }
 
 element normal.normal {
     text-color: @foreground;
+    border-radius: 0px;
+    background-color: @normal-background;
 }
 
 element normal.urgent, element selected.urgent {
     background-color: @urgent-background;
     text-color: @background;
+    border-radius: 0px;
 }
 
 element normal.active, element selected.active {
     background-color: @active-background;
     text-color: @background;
+    border-radius: 0px;
 }
 
 element selected.normal {
     background-color: @selected-normal-background;
     text-color: @background;
+    border-radius: 0px;
 }
 
 element-icon {
-    size: 1.2em;
+    size: 1.4em;
     vertical-align: 0.5;
 }
 
